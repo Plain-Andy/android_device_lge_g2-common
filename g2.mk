@@ -110,6 +110,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
 
 # Audio Configuration
+ifeq ($(filter vs980,$(TARGET_DEVICE)),)
+PRODUCT_PROPERTY_OVERRIDES += \
+
+    persist.audio.handset.mic.type=digital \
+    persist.audio.dualmic.config=endfire \
+    persist.audio.fluence.voicecall=true \
+    persist.audio.fluence.voicerec=false \
+    persist.audio.fluence.speaker=false
+else
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.ssr=false \
     ro.qc.sdk.audio.fluencetype=fluence \
@@ -121,7 +130,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.handset_rx_type=DEFAULT \
     persist.audio.nsenabled=ON \
     persist.speaker.prot.enable=false \
-    persist.audio.spkcall_2mic=OFF \
+    persist.audio.spkcall_2mic=OFF
+endif
+PRODUCT_PROPERTY_OVERRIDES += \
     af.resampler.quality=255 \
     audio.offload.buffer.size.kb=32 \
     audio.offload.gapless.enabled=false \
