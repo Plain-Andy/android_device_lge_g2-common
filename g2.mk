@@ -253,6 +253,9 @@ PRODUCT_PACKAGES += \
         loki_patch \
         loki_flash
 
+# Aroma Device overlay
+$(call inherit-product, device/lge/g2-common/aroma/aroma.mk)
+
 # QC Perf
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.extension_library=/vendor/lib/libqc-opt.so
