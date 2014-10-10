@@ -1,6 +1,7 @@
 PRODUCT_COPY_FILES += \
 	device/lge/g2-common/aroma/aroma-device-config:aroma-device-config \
-	device/lge/g2-common/aroma/aroma-device-config:aroma-device-script
+	device/lge/g2-common/aroma/aroma-device-script:aroma-device-script \
+	device/lge/g2-common/aroma/aroma_device_files/deviceconfig.sh:aroma_device/deviceconfig.sh
 
 #PRODUCT_COPY_FILES += \
 #	device/lge/g2-common/aroma/aroma_device_files/<SOURCE-FILE>:aroma_device/<DEST-FILE>
