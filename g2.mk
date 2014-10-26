@@ -167,25 +167,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	camera.g2
 
-# Audio
-PRODUCT_PACKAGES += \
-	audio.primary.msm8974 \
-	audio.a2dp.default \
-	audio.usb.default \
-	audio.r_submix.default \
-	libaudio-resampler \
-	libqcomvisualizer \
-	libqcomvoiceprocessing \
-	libqcomvoiceprocessingdescriptors
-
-PRODUCT_PACKAGES += \
-        libmm-omxcore \
-	libdivxdrmdecrypt \
-	libOmxVdec \
-	libOmxVenc \
-	libOmxCore \
-	libstagefrighthw \
-	libc2dcolorconvert
+# Audio configuration
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.qc.sdk.audio.fluencetype=fluence \
+	persist.audio.fluence.voicecall=true \
+	persist.audio.fluence.mode=endfire \
+	persist.audio.handset.mic=digital \
+	af.resampler.quality=4 \
+	audio.offload.min.duration.secs=30 \
+	audio.offload.buffer.size.kb=32 \
+	av.offload.enable=true
 
 PRODUCT_PACKAGES += \
 	libloc_adapter
@@ -224,17 +215,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.qualcomm.sns.daemon=i \
 	debug.qualcomm.sns.libsensor1=e
 
-# Audio Configuration
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.audio.handset.mic.type=digital \
-	persist.audio.dualmic.config=endfire \
-	persist.audio.fluence.voicecall=true \
-	persist.audio.fluence.voicerec=false \
-	persist.audio.fluence.speaker=false \
-	af.resampler.quality=4 \
-	audio.offload.buffer.size.kb=32 \
-	audio.offload.gapless.enabled=false \
-	av.offload.enable=true
+# Audio
+PRODUCT_PACKAGES += \
+	audio.primary.msm8974 \
+	audio.a2dp.default \
+	audio.usb.default \
+	audio.r_submix.default \
+	libaudio-resampler \
+	libqcomvisualizer \
+	libqcomvoiceprocessing \
+	libqcomvoiceprocessingdescriptors
+
+# Media
+PRODUCT_PACKAGES += \
+	libmm-omxcore \
+	libdivxdrmdecrypt \
+	libOmxVdec \
+	libOmxVenc \
+	libOmxCore \
+	libstagefrighthw \
+	libc2dcolorconvert
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
