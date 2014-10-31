@@ -169,12 +169,12 @@ PRODUCT_PACKAGES += \
 
 # Audio configuration
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.qc.sdk.audio.fluencetype=fluence \
+	persist.audio.handset.mic.type=digital \
+	persist.audio.dualmic.config=endfire \
 	persist.audio.fluence.voicecall=true \
-	persist.audio.fluence.mode=endfire \
-	persist.audio.handset.mic=digital \
+	persist.audio.fluence.voicerec=false \
+	persist.audio.fluence.speaker=false \
 	af.resampler.quality=4 \
-	audio.offload.min.duration.secs=30 \
 	audio.offload.buffer.size.kb=32 \
 	av.offload.enable=true
 
