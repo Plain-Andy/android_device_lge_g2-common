@@ -30,5 +30,8 @@
 
     <!-- Should "4G" be shown instead of "LTE" when the network is NETWORK_TYPE_LTE? -->
     <bool name="config_show4GForLTE">false</bool>
+
+    <!-- Whether NFC toggle shows in quick settings or not -->
+    <bool name="quick_settings_show_nfc">true</bool>
 </resources>
 
